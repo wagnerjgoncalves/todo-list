@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Task do
   describe 'associations' do
     it { should belong_to :user }
+    it { should have_many :sub_tasks }
   end
 
   describe 'validations' do
