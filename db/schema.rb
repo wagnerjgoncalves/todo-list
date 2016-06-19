@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619112423) do
+ActiveRecord::Schema.define(version: 20160619115659) do
+
+  create_table "sub_tasks", force: :cascade do |t|
+    t.string   "description",                 null: false
+    t.integer  "task_id",                     null: false
+    t.boolean  "completed",   default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "sub_tasks", ["description"], name: "index_sub_tasks_on_description"
+  add_index "sub_tasks", ["task_id"], name: "index_sub_tasks_on_task_id"
 
   create_table "tasks", force: :cascade do |t|
     t.string   "description",                  null: false
