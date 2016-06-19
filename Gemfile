@@ -4,6 +4,7 @@ gem 'rails', '4.2.6'
 gem 'sqlite3'
 gem 'devise', '4.1.1'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 group :development, :test do
   gem 'byebug',             '~> 9.0', '>= 9.0.5'
