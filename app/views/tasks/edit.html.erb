@@ -1,0 +1,25 @@
+<h2>Editing Task</h2>
+<%= render 'form' %>
+
+<section>
+  <h3>Sub Tasks</h3>
+  <ul id='sub_tasks'></ul>
+  <div id='sub_task_form'>
+    <%= render 'sub_tasks/form' %>
+  </div>
+</section>
+
+<%= link_to 'Back', tasks_path %>
+
+<script id="sub-task-template" type="text/x-handlebars-template">
+  <li>
+    {{#if completed }}
+      <input type="checkbox" checked="checked" data-sub-task-id="{{id}}">
+    {{else}}
+      <input type="checkbox" data-sub-task-id="{{id}}">
+    {{/if}}
+
+    <span>{{description}}</span>
+    <button type="remove" data-sub-task-id="{{id}}">Remove</button>
+  </li>
+</script>

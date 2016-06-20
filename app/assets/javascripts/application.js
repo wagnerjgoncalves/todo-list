@@ -1,0 +1,11 @@
+//= require jquery
+//= require jquery_ujs
+//= require underscore
+//= require backbone
+//= require handlebars
+//= require start
+//= require sub_tasks/models/sub_task
+//= require sub_tasks/views/sub_task_form
+//= require sub_tasks/views/sub_task_item
+//= require sub_tasks/views/sub_tasks
+//= require sub_tasks/start

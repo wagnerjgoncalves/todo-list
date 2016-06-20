@@ -1,0 +1,20 @@
+<%= simple_form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :id %>
+  <%= f.input :description %>
+  <%= f.input :kind, collection: Task.kinds.symbolize_keys.keys,
+                     include_blank: false,
+                     selected: f.object.kind %>
+  <%= f.button :submit %>
+<% end %>

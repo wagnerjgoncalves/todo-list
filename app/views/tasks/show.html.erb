@@ -1,0 +1,12 @@
+<h2>Show Task</h2>
+
+<p>User: <%= @task.user.name %></p>
+<p>Description: <%= @task.description %></p>
+<p>Kind: <%= @task.kind %></p>
+
+<h3>Sub Tasks</h3>
+<% @task.sub_tasks.each do |sub_task| %>
+  <li><%= sub_task.description %></li>
+<% end %>
+
+<%= link_to 'Back', tasks_path %>
