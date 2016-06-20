@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'devise', '4.1.1'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug',             '~> 9.0', '>= 9.0.5'

@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root 'tasks#index'
 
-  resources :tasks, except: :show
+  resources :tasks do
+    resources :sub_tasks, except: [:new, :show]
+  end
 end

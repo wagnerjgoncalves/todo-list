@@ -1,0 +1,3 @@
+<%= simple_form_for(@sub_task, url: task_sub_tasks_path(task_id: @sub_task.task_id), remote: true) do |f| %>
+  <%= f.input :description %>
+<% end %>

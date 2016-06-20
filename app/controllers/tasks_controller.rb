@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, except: [:index, :new, :create]
 
   def index
     @tasks = Task.by_user(current_user.id) + Task.not_user(current_user.id).common
@@ -10,6 +10,8 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @sub_task = SubTask.new(task_id: @task.id)
+
     if current_user != @task.user
       redirect_to tasks_url, notice: 'You do not have permission to edit Tasks from other users .'
     end
@@ -19,7 +21,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to tasks_url, notice: 'Task was successfully created.'
+      redirect_to edit_task_url(@task), notice: 'Task was successfully created.'
     else
       render :new
     end
